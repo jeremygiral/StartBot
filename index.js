@@ -18,7 +18,7 @@ restService.post("/echo", function(req, res) {
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.parametre
-      ? req.body.result.parameters.parametre
+      ? req.body.result.parameters.parametre+' super non ?!'
       : "On dirait qu'il y a un problème, essaye encore.";
   return res.json({
     speech: speech,
