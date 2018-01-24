@@ -22,6 +22,19 @@ restService.post("/echo", function(req, res) {
   : "On dirait qu'il y a un problème, essaye encore.";
   //var followup="{\"followupEvent\": {\"name\": \"Commencement\",\"data\": {\"test\":\"ceci est un test\"}}}";
   var followintent={name: "Commencement",data:{test:"test"}};
+  return res.json({
+    fulfillmentText: speech,
+    fulfillmentMessages: {
+      "platform": enum(PLATFORM_UNSPECIFIED),
+      "text": {
+        speech
+      }
+    },
+    followupEventInput:followintent
+  });
+});
+
+
   // return res.json({
   // speech: speech,
   // displayText: speech,
@@ -54,12 +67,7 @@ restService.post("/echo", function(req, res) {
   // "languageCode": string,
   // }
   // }
-  return res.json({
-    fulfillmentText: speech,
-    fulfillmentMessages: [{text: speech}],
-    followupEventInput:followintent
-  });
-});
+
 
 
 
