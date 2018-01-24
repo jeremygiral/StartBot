@@ -20,10 +20,15 @@ restService.post("/echo", function(req, res) {
     req.body.result.parameters.parametre
       ? req.body.result.parameters.parametre+' super non ?!'
       : "On dirait qu'il y a un problème, essaye encore.";
+  var followup="{\"name\": \"Commencement\"}";
+   /*\"data\": {\
+      \"<PARAMETER_NAME>\":\"<PARAMETER_VALUE>\"\*/
+
   return res.json({
     speech: speech,
     displayText: speech,
-    source: "webhook-echo-sample"
+    source: "webhook-echo-sample",
+    followupEvent: followup
   });
 });
 
