@@ -56,7 +56,7 @@ restService.post("/echo", function(req, res) {
   // }
   return res.json({
     fulfillmentText: speech,
-    fulfillmentMessages: {text: speech},
+    fulfillmentMessages: [{text: speech}],
     followupEventInput:followintent
   });
 });
