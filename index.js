@@ -27,7 +27,7 @@ restService.post("/echo", function(req, res) {
     fulfillmentMessages: {
       "platform": enum(PLATFORM_UNSPECIFIED),
       "text": {
-        speech
+        "text": [speech]
       }
     },
     followupEventInput:followintent
