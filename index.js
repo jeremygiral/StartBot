@@ -22,6 +22,9 @@ restService.post("/echo", function(req, res) {
   : "On dirait qu'il y a un problème, essaye encore.";
   //var followup="{\"followupEvent\": {\"name\": \"Commencement\",\"data\": {\"test\":\"ceci est un test\"}}}";
   var followintent={name: "Commencement",data:{test:"test"}};
+  var testparam =req.body.result.parameters.parametre ? req.body.result.parameters.parametre+' super non ?!': "Pas de parametre";
+  var testaction =req.body.result.action ? req.body.result.action+' super non ?!': "Pas d'action";
+  var testcontext =req.body.result.context ? req.body.result.context+' super non ?!': "Pas de context";
 //   return res.json({
 //     fulfillmentText: speech,
 //     fulfillmentMessages: {
@@ -37,7 +40,7 @@ restService.post("/echo", function(req, res) {
 
   return res.json({
   speech: speech,
-  displayText: speech,
+  displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
   source: "webhook-echo-sample"
   });
   });
