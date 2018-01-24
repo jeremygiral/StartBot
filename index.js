@@ -22,25 +22,25 @@ restService.post("/echo", function(req, res) {
   : "On dirait qu'il y a un problème, essaye encore.";
   //var followup="{\"followupEvent\": {\"name\": \"Commencement\",\"data\": {\"test\":\"ceci est un test\"}}}";
   var followintent={name: "Commencement",data:{test:"test"}};
+//   return res.json({
+//     fulfillmentText: speech,
+//     fulfillmentMessages: {
+//       "platform": enum("PLATFORM_UNSPECIFIED"),
+//       "text": {
+//         "text": [speech]
+//       }
+//     },
+//     followupEventInput:followintent
+//   });
+// });
+
+
   return res.json({
-    fulfillmentText: speech,
-    fulfillmentMessages: {
-      "platform": enum("PLATFORM_UNSPECIFIED"),
-      "text": {
-        "text": [speech]
-      }
-    },
-    followupEventInput:followintent
+  speech: speech,
+  displayText: speech,
+  source: "webhook-echo-sample"
   });
-});
-
-
-  // return res.json({
-  // speech: speech,
-  // displayText: speech,
-  // source: "webhook-echo-sample"
-  // });
-  // });
+  });
   //
   // "fulfillment": {
   // "speech": "Oui super non ?!",
