@@ -20,7 +20,7 @@ restService.post("/echo", function(req, res) {
     req.body.result.parameters.parametre
       ? req.body.result.parameters.parametre+' super non ?!'
       : "On dirait qu'il y a un problème, essaye encore.";
-  var followup="{\"followupEvent\": {\"name\": \"Commencement\",\"data\": {\"test\":\"ceci est un test\"}}}";
+  //var followup="{\"followupEvent\": {\"name\": \"Commencement\",\"data\": {\"test\":\"ceci est un test\"}}}";
 
   return res.json({
     speech: speech,
