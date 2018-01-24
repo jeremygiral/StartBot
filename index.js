@@ -25,7 +25,7 @@ restService.post("/echo", function(req, res) {
   return res.json({
     fulfillmentText: speech,
     fulfillmentMessages: {
-      "platform": enum(PLATFORM_UNSPECIFIED),
+      "platform": enum("PLATFORM_UNSPECIFIED"),
       "text": {
         "text": [speech]
       }
