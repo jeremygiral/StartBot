@@ -14,17 +14,85 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  var speech =
-  req.body.result &&
-  req.body.result.parameters &&
-  req.body.result.parameters.parametre
-  ? req.body.result.parameters.parametre+' super non ?!'
-  : "On dirait qu'il y a un problème, essaye encore.";
-  //var followup="{\"followupEvent\": {\"name\": \"Commencement\",\"data\": {\"test\":\"ceci est un test\"}}}";
-  var followintent={name: "Commencement",data:{test:"test"}};
-  var testparam =req.body.result.parameters.parametre ? req.body.result.parameters.parametre+' super non ?!': "Pas de parametre";
-  var testaction =req.body.result.action ? req.body.result.action+' super non ?!': "Pas d'action";
-  var testcontext =req.body.result.context ? req.body.result.context+' super non ?!': "Pas de context";
+  if (req.body.result.parameters.Reponse10){
+    return res.json({
+      speech: speech,
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+
+    });
+
+  }
+  if (req.body.result.parameters.Reponse9){
+    return res.json({
+      speech: speech,
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  if (req.body.result.parameters.Reponse8){
+    return res.json({
+      speech: speech,
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  if (req.body.result.parameters.Reponse7){
+    return res.json({
+      speech: speech,
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  if (req.body.result.parameters.Reponse6){
+    return res.json({
+      speech: speech,
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  if (req.body.result.parameters.Reponse5){
+    return res.json({
+      speech: speech,
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  if (req.body.result.parameters.Reponse4){
+    return res.json({
+      speech: speech,
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  if (req.body.result.parameters.Reponse3){
+    return res.json({
+      speech: speech,
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  if (req.body.result.parameters.Reponse2){
+    return res.json({
+      speech: "Au cours de la création de votre entreprise, ou durant son existence avez-vous élaboré un Business Plan ?",
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  if (req.body.result.parameters.Reponse1){
+    var rep1=req.body.result.parameters.Reponse1
+    return res.json({
+      speech: "Très bien ! Alors, au cours de la création de votre entreprise ou durant son existence avez-vous élaborer un Business Plan ?",
+      displayText: speech+'\n'+testparam+'\n'+testaction+'\n'+testcontext,
+    });
+  }
+  /*
+  if (req.body.result.parameters.Reponse){
+    
+  }
+  if (req.body.result.parameters.Reponse){
+    
+  }
+  */
+  // var speech = req.body.result.parameters.parametre
+  // ? req.body.result.parameters.parametre+' super non ?!'
+  // : "On dirait qu'il y a un problème, essaye encore.";
+  // //var followup="{\"followupEvent\": {\"name\": \"Commencement\",\"data\": {\"test\":\"ceci est un test\"}}}";
+  // var followintent={name: "Commencement",data:{test:"test"}};
+  // var testparam =req.body.result.parameters.parametre ? req.body.result.parameters.parametre+' super non ?!': "Pas de parametre";
+  // var testaction =req.body.result.action ? req.body.result.action+' super non ?!': "Pas d'action";
+  // var testcontext =req.body.result.context ? req.body.result.context+' super non ?!': "Pas de context";
 //   return res.json({
 //     fulfillmentText: speech,
 //     fulfillmentMessages: {
